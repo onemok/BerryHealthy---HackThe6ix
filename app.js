@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 
 const mainpageController = require('./controllers/mainpage_controller.js');
 app.use('/mainpage', mainpageController)
+const loginController = require('./controllers/login_controller.js');
+app.use('/login', loginController)
 
 /*
 app.get('/', function(req, res) {
