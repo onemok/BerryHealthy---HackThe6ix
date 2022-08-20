@@ -9,9 +9,7 @@ mongoose.connect('mongodb://localhost/berryhealthy')
 const Parents = require('./Models/parent_model');
 const Children = require('./Models/children_model');
 
-
 const { pipeline } = require("stream");
-
 const cors = require("cors");
 
 app.use(
@@ -35,7 +33,7 @@ app.use("/children", childrenController);
 const mainpageController = require("./controllers/mainpage_controller.js");
 app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
-app.use("/login", loginController);
+app.use("/signin", loginController);
 
 app.get("/", function (req, res) {
   fetch("https://google.com")
