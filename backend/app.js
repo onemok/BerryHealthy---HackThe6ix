@@ -37,12 +37,6 @@ app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
 app.use("/login", loginController);
 
-
-app.get("/parents", (req, res) => {
-  res.json("This is BerryHealthy!");
-});
-
-
 app.get("/", function (req, res) {
   fetch("https://google.com")
     .then((res) => res.text())
