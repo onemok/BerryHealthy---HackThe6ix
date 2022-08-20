@@ -1,3 +1,4 @@
+# BerryHealthy-HackThe6ix
 <h1 align="center"> BerryHealthy @ HackThe6ix </h1>
 <br>
 
@@ -22,3 +23,4 @@ Throughout the last decade, childhood obesity has been rising at an alarming rat
 
 # Sources
 [1] “Helping all children grow up healthy,” The State of Childhood Obesity, 17-Aug-2022. [Online]. Available: https://stateofchildhoodobesity.org/. [Accessed: 19-Aug-2022]. 
+

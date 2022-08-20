@@ -1,0 +1,34 @@
+{
+  "name": "berryhealthy-hackthe6ix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onemok/BerryHealthy-HackThe6ix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onemok/BerryHealthy-HackThe6ix/issues"
+  },
+  "homepage": "https://github.com/onemok/BerryHealthy-HackThe6ix#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "got": "^12.3.1",
+    "mongoose": "^6.5.2",
+    "mongoose-seed": "^0.6.0",
+    "node-fetch": "^2.6.6",
+    "stream": "^0.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
