@@ -21,3 +21,6 @@ brew install mongodb-community@6.0
 brew services start mongodb-community@6.0
 ```
 https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+
+#### Firebase Instructions
+npm install -g firebase-tools
