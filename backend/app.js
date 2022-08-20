@@ -27,24 +27,11 @@ app.get("/", (req, res) => {
   res.json("This is BerryHealthy!");
 });
 
-app.get("/parents", (req, res) => {
-  Parents.find().populate({
-    path: 'children'
-  })
-  .then(parent => {
-    res.json(parent);
-  })
-});
-
-app.get("/children", (req, res) => {
-  Children.find()
-  .then(child => {
-    res.json(child);
-  })
-});
-
-
 // controllers
+const parentsController = require("./controllers/parents_controller.js");
+app.use("/parents", parentsController);
+const childrenController = require("./controllers/children_controller.js");
+app.use("/children", childrenController);
 const mainpageController = require("./controllers/mainpage_controller.js");
 app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
