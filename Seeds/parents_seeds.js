@@ -14,7 +14,7 @@ mongoose
 
     const seedParents = [
         {
-            _id: ObjectId(),
+            _id: ObjectId('6300399fcd7e8afedf36e7dc'),
             firstName: 'SpongeBob',
             lastName: 'Squarepants',
             email_address: 'spongebob.squarepants@gmail.com',
@@ -22,7 +22,7 @@ mongoose
             phone_number: '111-222-3333'
         },
         {
-            _id: ObjectId(),
+            _id: ObjectId('630039a9d638e0b4971ad46c'),
             firstName: 'Squidward',
             lastName: 'Tentacles',
             email_address: 'squidward.tentacles@gmail.com',
@@ -30,7 +30,7 @@ mongoose
             phone_number: '444-555-6666'
         },
         {
-            _id: ObjectId(),
+            _id: ObjectId('630039b627ae26affe3e04b2'),
             firstName: 'Patrick',
             lastName: 'Star',
             email_address: 'patrick.star@gmail.com',
