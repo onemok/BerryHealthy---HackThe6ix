@@ -1,9 +1,14 @@
 const express = require("express");
 const fetch = require("node-fetch");
-
 const app = express();
 const PORT = 3000;
 app.use(express.json());
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/berryhealthy')
+
+const Parents = require('./Models/parent_model');
+const Children = require('./Models/children_model');
+
 
 const { pipeline } = require("stream");
 
@@ -22,10 +27,34 @@ app.get("/", (req, res) => {
   res.json("This is BerryHealthy!");
 });
 
+app.get("/parents", (req, res) => {
+  Parents.find().populate({
+    path: 'children'
+  })
+  .then(parent => {
+    res.json(parent);
+  })
+});
+
+app.get("/children", (req, res) => {
+  Children.find()
+  .then(parent => {
+    res.json(parent);
+  })
+});
+
+
+// controllers
 const mainpageController = require("./controllers/mainpage_controller.js");
 app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
 app.use("/login", loginController);
+
+
+app.get("/parents", (req, res) => {
+  res.json("This is BerryHealthy!");
+});
+
 
 app.get("/", function (req, res) {
   fetch("https://google.com")

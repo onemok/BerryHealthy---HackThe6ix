@@ -14,7 +14,7 @@ mongoose
 
     const seedChildren = [
         {
-            _id: ObjectId(),
+            _id: ObjectId('6300407cf946205c01283f95'),
             username: 'wee123',
             firstName: 'Peter',
             lastName: 'Parker',
@@ -23,7 +23,7 @@ mongoose
             weight: '90 LBS'
         },
         {
-            _id: ObjectId(),
+            _id: ObjectId('630040855630b1e11ca446bd'),
             username: 'yay123',
             firstName: 'Michelle',
             lastName: 'Jones-Watson',
@@ -32,7 +32,7 @@ mongoose
             weight: '85 LBS'
         },
         {
-            _id: ObjectId(),
+            _id: ObjectId('6300408b5649f5dbc202c83d'),
             username: 'wow123',
             firstName: 'Ned',
             lastName: 'Leeds',

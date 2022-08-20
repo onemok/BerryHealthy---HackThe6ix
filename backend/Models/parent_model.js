@@ -20,7 +20,7 @@ const ParentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'Children', default: "6300399fcd7e8afedf36e7dc"
     }},
     {timestamps: true},
-    {collection: 'children'});
+    {collection: 'parents'});
 
     const Parent = mongoose.model('Parent', ParentSchema);
         

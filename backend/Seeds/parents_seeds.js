@@ -19,7 +19,8 @@ mongoose
             lastName: 'Squarepants',
             email_address: 'spongebob.squarepants@gmail.com',
             password: 'abc123',
-            phone_number: '111-222-3333'
+            phone_number: '111-222-3333',
+            children: '6300407cf946205c01283f95'
         },
         {
             _id: ObjectId('630039a9d638e0b4971ad46c'),
@@ -27,7 +28,8 @@ mongoose
             lastName: 'Tentacles',
             email_address: 'squidward.tentacles@gmail.com',
             password: 'abc123',
-            phone_number: '444-555-6666'
+            phone_number: '444-555-6666',
+            children: '630040855630b1e11ca446bd'
         },
         {
             _id: ObjectId('630039b627ae26affe3e04b2'),
@@ -35,7 +37,8 @@ mongoose
             lastName: 'Star',
             email_address: 'patrick.star@gmail.com',
             password: 'abc123',
-            phone_number: '777-888-9999'
+            phone_number: '777-888-9999',
+            children: '6300408b5649f5dbc202c83d'
         }
     ]
 
