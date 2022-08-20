@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 app.use(express.json());
+const got = require('got');
+const { pipeline } = require('stream');
 
 const cors = require('cors')
 
@@ -21,7 +23,6 @@ app.use('/mainpage', mainpageController)
 const loginController = require('./controllers/login_controller.js');
 app.use('/login', loginController)
 
-/*
 app.get('/', function(req, res) {
     const dataStream = got.stream({
         uri: 'http://www.giantbomb.com/api/search',
@@ -38,7 +39,27 @@ app.get('/', function(req, res) {
     });
   });
 
+
+/*
+// This sets up a route to localhost:3000/random and goes off and hits
+// cat-fact.herokuapp.com/facts/random
+app.get('/:apiRoute', async (req, res) => {
+  try {
+    const { apiRoute } = req.params
+    const apiResponse = await fetch(
+      'https://cat-fact.herokuapp.com/facts/' + apiRoute
+    )
+    const apiResponseJson = await apiResponse.json()
+    // await db.collection('collection').insertOne(apiResponseJson)
+    console.log(apiResponseJson)
+    res.send('Done – check console log')
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Something went wrong')
+  }
+})
 */
+
 
 // Run server
 app.listen(PORT, ()=> {
