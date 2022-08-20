@@ -38,8 +38,8 @@ app.get("/parents", (req, res) => {
 
 app.get("/children", (req, res) => {
   Children.find()
-  .then(parent => {
-    res.json(parent);
+  .then(child => {
+    res.json(child);
   })
 });
 
