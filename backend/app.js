@@ -3,11 +3,11 @@ const fetch = require("node-fetch");
 const app = express();
 const PORT = 3000;
 app.use(express.json());
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/berryhealthy')
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://docker:mongopw@localhost:49153");
 
-const Parents = require('./Models/parent_model');
-const Children = require('./Models/children_model');
+const Parents = require("./Models/parent_model");
+const Children = require("./Models/children_model");
 
 const { pipeline } = require("stream");
 const cors = require("cors");
@@ -34,10 +34,6 @@ const mainpageController = require("./controllers/mainpage_controller.js");
 app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
 app.use("/signin", loginController);
-
-
-
-
 
 app.get("/", function (req, res) {
   fetch("https://google.com")

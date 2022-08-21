@@ -1,13 +1,28 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import Logo from "../assets/temp_logo.png";
 import { GemsContext } from "./Auth/GemContext";
 function Header() {
   const location = useLocation();
+  const [path, setPath] = useState(location.pathname);
+  const history = useHistory();
   const gemData = useContext(GemsContext);
   const [gems, setGems] = useState(0);
+  console.log(location.pathname);
+  useEffect(() => {
+    console.log(location.pathname);
+    setPath(location.pathname);
+  }, [location.pathname]);
 
-  if (location.pathname === "/app") {
+  if (
+    path === "/app" ||
+    path === "/app/" ||
+    path === "/record" ||
+    path === "/points" ||
+    path === "/settings" ||
+    path === "/calendar" ||
+    path === "/leaderboard"
+  ) {
     return (
       <div className="navbar bg-purple-700 text-white justify-between mb-8  text-base-content rounded-box w-full  max-w-7xl mx-auto px-5 ">
         <div>
@@ -26,17 +41,23 @@ function Header() {
           <p className="font-bold text-lg">{gems}</p>
         </div>
         <div>
-          <a className="normal-case font-bold text-lg btn btn-ghost">
+          <a
+            href="/calendar"
+            className="normal-case font-bold text-lg btn btn-ghost"
+          >
             Calendar
           </a>
         </div>
         <div>
-          <a className="normal-case font-bold text-lg btn btn-ghost">
+          <a
+            href="/leaderboard"
+            className="normal-case font-bold text-lg btn btn-ghost"
+          >
             Leaderboard
           </a>
         </div>
         <div>
-          <button>
+          <a href="/settings">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -56,7 +77,7 @@ function Header() {
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     );
