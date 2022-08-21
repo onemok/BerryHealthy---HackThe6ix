@@ -20,7 +20,9 @@ mongoose
             lastName: 'Parker',
             birthyear: '2010',
             height: '5 FT 2 IN',
-            weight: '90 LBS'
+            weight: '90 LBS',
+            // plaintext password: 'abc123'
+            password: '$2a$10$FWLbOUPYCLlHgnk9KOEvKe4RnN5TM2j.HELbLwcPGSV1aq20q4sWi',
         },
         {
             _id: ObjectId('630040855630b1e11ca446bd'),
@@ -29,7 +31,9 @@ mongoose
             lastName: 'Jones-Watson',
             birthyear: '2012',
             height: '5 FT 3 IN',
-            weight: '85 LBS'
+            weight: '85 LBS',
+            // plaintext password: 'abc123'
+            password: '$2a$10$FWLbOUPYCLlHgnk9KOEvKe4RnN5TM2j.HELbLwcPGSV1aq20q4sWi',
         },
         {
             _id: ObjectId('6300408b5649f5dbc202c83d'),
@@ -38,7 +42,9 @@ mongoose
             lastName: 'Leeds',
             birthyear: '2014',
             height: '5 FT 4 IN',
-            weight: '120 LBS'
+            weight: '120 LBS',
+            // plaintext password: 'abc123'
+            password: '$2a$10$FWLbOUPYCLlHgnk9KOEvKe4RnN5TM2j.HELbLwcPGSV1aq20q4sWi',
         },
     ]
 
