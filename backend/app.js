@@ -1,12 +1,15 @@
 const express = require("express");
 const fetch = require("node-fetch");
-
 const app = express();
 const PORT = 3000;
 app.use(express.json());
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/berryhealthy')
+
+const Parents = require('./Models/parent_model');
+const Children = require('./Models/children_model');
 
 const { pipeline } = require("stream");
-
 const cors = require("cors");
 
 app.use(
@@ -22,10 +25,19 @@ app.get("/", (req, res) => {
   res.json("This is BerryHealthy!");
 });
 
+// controllers
+const parentsController = require("./controllers/parents_controller.js");
+app.use("/parents", parentsController);
+const childrenController = require("./controllers/children_controller.js");
+app.use("/children", childrenController);
 const mainpageController = require("./controllers/mainpage_controller.js");
 app.use("/mainpage", mainpageController);
 const loginController = require("./controllers/login_controller.js");
-app.use("/login", loginController);
+app.use("/signin", loginController);
+
+
+
+
 
 app.get("/", function (req, res) {
   fetch("https://google.com")
