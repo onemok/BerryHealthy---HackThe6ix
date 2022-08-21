@@ -21,13 +21,13 @@ function AppTest() {
       <div className="w-full flex flex-col md:flex-row gap-10 justify-center mt-40">
         <button
           className="rounded-full h-80 w-80  text-base-content font-bold btn btn-primary"
-          onClick={() => history.push("/app/points")}
+          onClick={() => history.push("/points")}
         >
           Check your Points
         </button>
         <button
           className="rounded-full h-80 w-80  text-base-content font-bold btn btn-warning text-white md:-translate-y-1/2 animate-none"
-          onClick={() => history.push("/app/record")}
+          onClick={() => history.push("/record")}
         >
           Record a Meal
         </button>

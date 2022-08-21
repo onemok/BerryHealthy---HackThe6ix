@@ -10,6 +10,9 @@ import SignUp from "./components/Auth/SignUp";
 import GemProvider, { GemsContext } from "./components/Auth/GemContext";
 import CheckPoints from "./components/App/CheckPoints";
 import RecordMeal from "./components/App/RecordMeal";
+import Leaderboard from "./components/App/Leaderboard";
+import Calendar from "./components/App/Calendar";
+import Settings from "./components/App/Settings";
 function App() {
   return (
     <AuthProvider>
@@ -19,9 +22,11 @@ function App() {
             <Header />
             <BrowserRouter>
               <Switch>
-                <Route path="/app/record" component={RecordMeal} />
-
-                <Route path="/app/points" component={CheckPoints} />
+                <Route path="/leaderboard" component={Leaderboard} />
+                <Route path="/calendar" component={Calendar} />
+                <Route path="/settings" component={Settings} />
+                <Route path="/record" component={RecordMeal} />
+                <Route path="/points" component={CheckPoints} />
                 <Route path="/app" component={AppTest} />
 
                 <Route path="/login" component={SignIn} />

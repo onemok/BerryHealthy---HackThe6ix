@@ -2,6 +2,35 @@ import React from "react";
 
 import PARENT_IMG from "../../assets/images/signup/parent.png";
 import CHILD_IMG from "../../assets/images/signup/child.png";
+import { useHistory } from "react-router-dom";
+
+async function loginUser(isParent, loginInfo) {
+  console.log(loginInfo);
+
+  if (isParent) {
+    return fetch("http://localhost:3000/parents/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email_address: loginInfo.email_address,
+        password: loginInfo.password,
+      }),
+    }).then((data) => data.json());
+  } else {
+    return fetch("http://localhost:3000/children/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email_address: loginInfo.email_address,
+        password: loginInfo.password,
+      }),
+    }).then((data) => data.json());
+  }
+}
 
 function SignIn() {
   const [isParent, setIsParent] = React.useState(null);
@@ -9,13 +38,17 @@ function SignIn() {
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
 
-  const handleSubmit = (e) => {
+  const history = useHistory();
+
+  const [token, setToken] = React.useState(null);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoginInfo({
-      parent: isParent,
-      email: emailRef.current.value,
+    const token = await loginUser(isParent, {
+      email_address: emailRef.current.value,
       password: passwordRef.current.value,
     });
+    setToken(token);
+    console.log(token);
   };
   const handleClick = (option) => {
     if (option === "parent") {
@@ -99,7 +132,7 @@ function SignIn() {
                   </div>
                   <div class="form-group">
                     <label class="label" for="name">
-                      <span class="label-text">Email</span>
+                      <span class="label-text">Password</span>
                     </label>
                     <input
                       name="Password"
@@ -117,9 +150,14 @@ function SignIn() {
                     </label>
                   </div>
                   <div class="form-group pt-4">
-                    <button type="submit" class="btn btn-primary btn-block ">
+                    <a
+                      type="submit"
+                      class="btn btn-primary btn-block "
+                      // onClick={() => history.push("/app")}
+                      href="/app"
+                    >
                       Sign In
-                    </button>
+                    </a>
                   </div>
                 </form>
               </div>
